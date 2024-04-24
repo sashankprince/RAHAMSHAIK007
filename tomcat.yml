@@ -13,7 +13,7 @@
         #dest: "/root/"
 
     - name: rename the tomcat
-      command: mv apache-tomcat-9.0.88tomcat
+      command: mv apache-tomcat-9.0.88 tomcat
       tags: abc
 
     - name: install java
