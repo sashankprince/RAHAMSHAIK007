@@ -1,15 +1,15 @@
-- hosts: test
+- hosts: all
 
   tasks:
     - name: download tomcat from dlcdn
       get_url:
-        url: "https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.76/bin/apache-tomcat-9.0.88.tar.gz"
+        url: "https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.88/bin/apache-tomcat-9.0.88.tar.gz"
         dest: "/root/"
 
     - name: untar the apache file
       command: tar -zxvf apache-tomcat-9.0.88.tar.gz
         #unarchive:
-        #src: "apache-tomcat-9.0.76.tar.gz"
+        #src: "apache-tomcat-9.0.88.tar.gz"
         #dest: "/root/"
 
     - name: rename the tomcat
@@ -27,7 +27,7 @@
     - name: delete two lines in context.xml
       template:
         src: context.xml
-        dest: /root/tomcat/webapps/manager/META-INF/context.xml
+        dest: /root/tomcat/webapps/manager/MET-INF/context.xml
 
     - name: start the tomcat
       shell: nohup /root/tomcat/bin/startup.sh
